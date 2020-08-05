@@ -2,6 +2,7 @@
 
 import math
 import turtle
+import random
 
 egg = turtle.Turtle()
 egg.color("#F4A896", "#358597")
