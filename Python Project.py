@@ -14,8 +14,3 @@ for i in range(n):
     egg.left(180-(180*(n-2)/n))
 egg.end_fill()
 turtle.done()
-
-print("Hello World")
-print("Goodbye World")
-
-print("lmao\n")
