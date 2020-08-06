@@ -16,7 +16,6 @@ def semicircle(size):
 
 
 egg.begin_fill()
-<<<<<<< HEAD
 egg.pensize(5)
 for i in range(3):
     egg.forward(200)
@@ -65,11 +64,3 @@ egg.left(235)
 egg.forward(40)
 
 turtle.done()
-=======
-egg.pensize(10)
-for i in range(n):
-    egg.forward(50)
-    egg.left(180-(180*(n-2)/n))
-egg.end_fill()
-turtle.done()
->>>>>>> 49e395142926cc6a36205bf93774ff118d970f51
