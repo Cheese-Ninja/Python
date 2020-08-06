@@ -62,8 +62,6 @@ for i in range(2):
 egg.left(235)
 egg.forward(40)
 
-turtle.done()
-=======
 egg.pensize(10)
 for i in range(n):
     egg.forward(50)
