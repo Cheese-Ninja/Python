@@ -18,7 +18,7 @@ def semicircle(size):
 egg.begin_fill()
 egg.pensize(10)
 for i in range(3):
-    egg.forward(20)
+    egg.forward(200)
     egg.left(120)
 egg.end_fill()
 egg.pensize(3)
