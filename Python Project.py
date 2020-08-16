@@ -38,6 +38,7 @@ def twosides():
 # Pythagoras
 
 if twosides() > 0:
+    # Figuring out which rearrangement of the formula to use
     if twosides() == 1:
         if HypA == True:
             sc = math.sqrt(math.pow(sa, 2) - math.pow(sb, 2))
