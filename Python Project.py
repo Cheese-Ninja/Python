@@ -13,16 +13,15 @@ sa = float(input("What is Side a? If unknown, input 0\n"))
 sb = float(input("What is Side b? If unknown, input 0\n"))
 sc = float(input("What is Side c? If unknown, input 0\n"))
 
-HypA = False
-HypB = False
-HypC = False
+HypLen = [False, False, False]
+# 0 = A, 1 = B, 2 = C 
 
 if AA == 90:
-    HypA = True
+    HypLen[0] = True
 if AB == 90:
-    HypB = True
+    HypLen[1] = True
 if AC == 90:
-    HypC = True
+    HypLen[2] = True
 
 
 def twosides():
@@ -40,26 +39,35 @@ def twosides():
 if twosides() > 0:
     # Figuring out which rearrangement of the formula to use
     if twosides() == 1:
-        if HypA == True:
+        if HypLen[0] == True:
             sc = math.sqrt(math.pow(sa, 2) - math.pow(sb, 2))
-        elif HypB == True:
+        elif HypLen[1] == True:
             sc = math.sqrt(math.pow(sb, 2) - math.pow(sa, 2))
-        elif HypA == True:
+        elif HypLen[2] == True:
             sc = math.sqrt(math.pow(sa, 2) + math.pow(sb, 2))
-        print("Side c is " + str(sc))
     if twosides() == 2:
-        if HypA == True:
+        if HypLen[0] == True:
             sb = math.sqrt(math.pow(sa, 2) - math.pow(sc, 2))
-        elif HypB == True:
+        elif HypLen[1] == True:
             sb = math.sqrt(math.pow(sa, 2) + math.pow(sc, 2))
-        elif HypC == True:
+        elif HypLen[2] == True:
             sb = math.sqrt(math.pow(sc, 2) - math.pow(sa, 2))
-        print("Side b is " + str(sb))
     if twosides() == 3:
-        if HypA == True:
+        if HypLen[0] == True:
             sa = math.sqrt(math.pow(sb, 2) + math.pow(sc, 2))
-        elif HypB == True:
+        elif HypLen[1] == True:
             sa = math.sqrt(math.pow(sb, 2) - math.pow(sc, 2))
-        elif HypC == True:
+        elif HypLen[2] == True:
             sa = math.sqrt(math.pow(sc, 2) - math.pow(sb, 2))
-        print("Side a is " + str(sa))
+    print("Side A is " + str(sa) + ", Side B is " + str(sb) + ", Side C is " + str(sc) + ".")
+    # SOHCAHTOA Trig
+    if HypLen[0] == True:
+        AB = math.degrees(math.acos(sc / sa))
+        AC = 90 - AB
+    elif HypLen[1] == True:
+        AC = math.degrees(math.acos(sa / sb))
+        AA = 90 - AC
+    elif HypLen[2] == True:
+        AA = math.degrees(math.acos(sb / sc))
+        AB = 90 - AA
+    print("Angle A is " + str(AA) + ", Angle B is " + str(AB) + ", Angle C is " + str(AC) + ".")
