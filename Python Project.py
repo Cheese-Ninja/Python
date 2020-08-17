@@ -45,6 +45,42 @@ def twosides():
     else:
         return 0
 
+def oneside():
+    if sa != 0 and sb == 0 and sc == 0:
+        return 1
+    if sa == 0 and sb != 0 and sc == 0:
+        return 2
+    if sa == 0 and sb == 0 and sc != 0:
+        return 3
+    else:
+        return 0
+
+def allangles():
+    if AA != 0 and AB != 0 and AC != 0:
+        return 1
+    else:
+        return 0
+
+def twoangles():
+    if AA != 0 and AB != 0 and AC == 0:
+        return 1
+    if AA != 0 and AB == 0 and AC != 0:
+        return 2
+    if AA == 0 and AB != 0 and AC != 0:
+        return 3
+    else:
+        return 0
+
+def oneside():
+    if AA != 0 and AB == 0 and AC == 0:
+        return 1
+    if AA == 0 and AB != 0 and AC == 0:
+        return 2
+    if AA == 0 and AB == 0 and AC != 0:
+        return 3
+    else:
+        return 0
+
 # Pythagoras
 
 if twosides() > 0:
