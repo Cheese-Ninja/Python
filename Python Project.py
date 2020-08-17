@@ -5,13 +5,35 @@ import turtle
 import random
 
 # Asking User for inputs
-
 AA = float(input("What is Angle A? If unknown, input 0\n"))
+while AA < 0 or AA >= 180:
+    AA = float(input("What is Angle A? If unknown, input 0\n"))
 AB = float(input("What is Angle B? If unknown, input 0\n"))
+while AB < 0 or AB >= 180:
+    AB = float(input("What is Angle B? If unknown, input 0\n"))
 AC = float(input("What is Angle C? If unknown, input 0\n"))
+while AC < 0 or AC >= 180:
+    AC = float(input("What is Angle C? If unknown, input 0\n"))
+if AA + AB + AC != 180:
+    print("Invalid angles: Error sum 180")
 sa = float(input("What is Side a? If unknown, input 0\n"))
+while sa < 0:
+    sa = float(input("What is Side a? If unknown, input 0\n"))
 sb = float(input("What is Side b? If unknown, input 0\n"))
+while sb < 0:
+    sb = float(input("What is Side b If unknown, input 0\n"))
 sc = float(input("What is Side c? If unknown, input 0\n"))
+while sc < 0:
+    sc = float(input("What is Side c? If unknown, input 0\n"))
+
+def allsides():
+    if sa != 0 and sb != 0 and sc != 0:
+        return 1
+    else:
+        return 0
+
+if allsides() == 1 and (sa + sb < sc or sb + sc < sa or sc + sa < sb):
+    print("Invalid side lengths: Error too big")
 
 HypLen = [False, False, False]
 # 0 = A, 1 = B, 2 = C 
