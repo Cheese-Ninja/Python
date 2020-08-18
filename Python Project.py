@@ -16,15 +16,15 @@ while AC < 0 or AC >= 180:
     AC = float(input("What is Angle C? If unknown, input 0\n"))
 if AA + AB + AC != 180:
     print("Invalid angles: Error sum 180")
-sa = float(input("What is Side a? If unknown, input 0\n"))
+sa = float(input("What is Side a (in cm)? If unknown, input 0\n"))
 while sa < 0:
-    sa = float(input("What is Side a? If unknown, input 0\n"))
-sb = float(input("What is Side b? If unknown, input 0\n"))
+    sa = float(input("What is Side a(in cm)? If unknown, input 0\n"))
+sb = float(input("What is Side b (in cm)? If unknown, input 0\n"))
 while sb < 0:
-    sb = float(input("What is Side b If unknown, input 0\n"))
-sc = float(input("What is Side c? If unknown, input 0\n"))
+    sb = float(input("What is Side b (in cm)? If unknown, input 0\n"))
+sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 while sc < 0:
-    sc = float(input("What is Side c? If unknown, input 0\n"))
+    sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 
 def allsides():
     if sa != 0 and sb != 0 and sc != 0:
