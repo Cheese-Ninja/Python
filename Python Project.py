@@ -14,8 +14,6 @@ while AB < 0 or AB >= 180:
 AC = float(input("What is Angle C? If unknown, input 0\n"))
 while AC < 0 or AC >= 180:
     AC = float(input("What is Angle C? If unknown, input 0\n"))
-if AA + AB + AC != 180:
-    print("Invalid angles: Error sum 180")
 sa = float(input("What is Side a? If unknown, input 0\n"))
 while sa < 0:
     sa = float(input("What is Side a? If unknown, input 0\n"))
@@ -32,7 +30,7 @@ def allsides():
     else:
         return 0
 
-if allsides() == 1 and (sa + sb < sc or sb + sc < sa or sc + sa < sb):
+if allsides() == 1 and (sa + sb <= sc or sb + sc <= sa or sc + sa <= sb):
     print("Invalid side lengths: Error too big")
 
 def twosides():
@@ -71,7 +69,7 @@ def twoangles():
     else:
         return 0
 
-def oneside():
+def oneangle():
     if AA != 0 and AB == 0 and AC == 0:
         return 1
     if AA == 0 and AB != 0 and AC == 0:
@@ -80,6 +78,14 @@ def oneside():
         return 3
     else:
         return 0
+
+if allangles() == 1:
+    if AA + AB + AC != 180:
+        print("Invalid angles: Error sum 180")
+
+if twoangles() > 0 or oneangle() > 0:
+    if AA + AB + AC > 180:
+        print("Invalid angles: Error sum 180")
 
 # Pythagoras
 
