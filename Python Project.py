@@ -14,13 +14,7 @@ while AB < 0 or AB >= 180:
 AC = float(input("What is Angle C? If unknown, input 0\n"))
 while AC < 0 or AC >= 180:
     AC = float(input("What is Angle C? If unknown, input 0\n"))
-<<<<<<< HEAD
 sa = float(input("What is Side a? If unknown, input 0\n"))
-=======
-if AA + AB + AC != 180:
-    print("Invalid angles: Error sum 180")
-sa = float(input("What is Side a (in cm)? If unknown, input 0\n"))
->>>>>>> a6809ecdc431a09644ab191bba35fa3407ba8339
 while sa < 0:
     sa = float(input("What is Side a(in cm)? If unknown, input 0\n"))
 sb = float(input("What is Side b (in cm)? If unknown, input 0\n"))
