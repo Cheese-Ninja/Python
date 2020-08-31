@@ -24,7 +24,7 @@ sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 while sc < 0:
     sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 
-def sides();
+def sides():
     if sa != 0 and sb != 0 and sc != 0:
         return 3
     if sa != 0 and sb != 0 and sc == 0:
