@@ -24,34 +24,28 @@ sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 while sc < 0:
     sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 
-def allsides():
+def sides();
     if sa != 0 and sb != 0 and sc != 0:
-        return 1
-    else:
-        return 0
-
-if allsides() == 1 and (sa + sb <= sc or sb + sc <= sa or sc + sa <= sb):
-    print("Invalid side lengths: Error too big")
-
-def twosides():
+        return 3
     if sa != 0 and sb != 0 and sc == 0:
-        return 1
+        return 21
     if sa != 0 and sb == 0 and sc != 0:
-        return 2
+        return 22
     if sa == 0 and sb != 0 and sc != 0:
-        return 3
-    else:
-        return 0
-
-def oneside():
+        return 23
     if sa != 0 and sb == 0 and sc == 0:
-        return 1
+        return 11
     if sa == 0 and sb != 0 and sc == 0:
-        return 2
+        return 12
     if sa == 0 and sb == 0 and sc != 0:
-        return 3
-    else:
+        return 13
+    if sa == 0 and sb == 0 and sc == 0:
         return 0
+    else:
+        return -1
+
+if sides() == 3 and (sa + sb <= sc or sb + sc <= sa or sc + sa <= sb):
+    print("Invalid side lengths: Error too big")
 
 def allangles():
     if AA != 0 and AB != 0 and AC != 0:
@@ -89,30 +83,29 @@ if twoangles() > 0 or oneangle() > 0:
 
 # Pythagoras
 
-if twosides() > 0:
+if 20 < sides() < 24:
     # Figuring out which rearrangement of the formula to use
-    if twosides() == 1:
+    if sides() == 21:
         if AA == 90:
             sc = math.sqrt(math.pow(sa, 2) - math.pow(sb, 2))
         elif AB == 90:
             sc = math.sqrt(math.pow(sb, 2) - math.pow(sa, 2))
         elif AC == 90:
             sc = math.sqrt(math.pow(sa, 2) + math.pow(sb, 2))
-    if twosides() == 2:
+    if sides() == 22:
         if AA == 90:
             sb = math.sqrt(math.pow(sa, 2) - math.pow(sc, 2))
         elif AB == 90:
             sb = math.sqrt(math.pow(sa, 2) + math.pow(sc, 2))
         elif AC == 90:
             sb = math.sqrt(math.pow(sc, 2) - math.pow(sa, 2))
-    if twosides() == 3:
+    if sides() == 23:
         if AA == 90:
             sa = math.sqrt(math.pow(sb, 2) + math.pow(sc, 2))
         elif AB == 90:
             sa = math.sqrt(math.pow(sb, 2) - math.pow(sc, 2))
         elif AC == 90:
             sa = math.sqrt(math.pow(sc, 2) - math.pow(sb, 2))
-    print("Side A is " + str(sa) + ", Side B is " + str(sb) + ", Side C is " + str(sc) + ".")
     # SOHCAHTOA Trig
     if AA == 90:
         AB = math.degrees(math.acos(sc / sa))
@@ -123,4 +116,6 @@ if twosides() > 0:
     elif AC == 90:
         AA = math.degrees(math.acos(sb / sc))
         AB = 90 - AA
-    print("Angle A is " + str(AA) + ", Angle B is " + str(AB) + ", Angle C is " + str(AC) + ".")
+
+print("Side A is " + str(sa) + ", Side B is " + str(sb) + ", Side C is " + str(sc) + ".")
+print("Angle A is " + str(AA) + ", Angle B is " + str(AB) + ", Angle C is " + str(AC) + ".")
