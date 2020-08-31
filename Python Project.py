@@ -47,37 +47,31 @@ def sides():
 if sides() == 3 and (sa + sb <= sc or sb + sc <= sa or sc + sa <= sb):
     print("Invalid side lengths: Error too big")
 
-def allangles():
+def angles():
     if AA != 0 and AB != 0 and AC != 0:
-        return 1
-    else:
-        return 0
-
-def twoangles():
+        return 3
     if AA != 0 and AB != 0 and AC == 0:
-        return 1
+        return 21
     if AA != 0 and AB == 0 and AC != 0:
-        return 2
+        return 22
     if AA == 0 and AB != 0 and AC != 0:
-        return 3
-    else:
-        return 0
-
-def oneangle():
+        return 23
     if AA != 0 and AB == 0 and AC == 0:
-        return 1
+        return 11
     if AA == 0 and AB != 0 and AC == 0:
-        return 2
+        return 12
     if AA == 0 and AB == 0 and AC != 0:
-        return 3
-    else:
+        return 13
+    if AA == 0 and AB == 0 and AC == 0:
         return 0
+    else:
+        return -1
 
-if allangles() == 1:
+if angles() == 3:
     if AA + AB + AC != 180:
         print("Invalid angles: Error sum 180")
 
-if twoangles() > 0 or oneangle() > 0:
+if 20 < angles() < 24 or 10 < angles() < 14:
     if AA + AB + AC > 180:
         print("Invalid angles: Error sum 180")
 
