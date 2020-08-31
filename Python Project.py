@@ -24,6 +24,21 @@ sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 while sc < 0:
     sc = float(input("What is Side c(in cm)? If unknown, input 0\n"))
 
+# Checking validity
+
+if sides() == 3 and (sa + sb <= sc or sb + sc <= sa or sc + sa <= sb):
+    print("Invalid side lengths: Error too big")
+
+if angles() == 3:
+    if AA + AB + AC != 180:
+        print("Invalid angles: Error sum 180")
+
+if 20 < angles() < 24 or 10 < angles() < 14:
+    if AA + AB + AC > 180:
+        print("Invalid angles: Error sum 180")
+
+# Functions
+
 def sides():
     if sa != 0 and sb != 0 and sc != 0:
         return 3
@@ -44,9 +59,6 @@ def sides():
     else:
         return -1
 
-if sides() == 3 and (sa + sb <= sc or sb + sc <= sa or sc + sa <= sb):
-    print("Invalid side lengths: Error too big")
-
 def angles():
     if AA != 0 and AB != 0 and AC != 0:
         return 3
@@ -66,14 +78,6 @@ def angles():
         return 0
     else:
         return -1
-
-if angles() == 3:
-    if AA + AB + AC != 180:
-        print("Invalid angles: Error sum 180")
-
-if 20 < angles() < 24 or 10 < angles() < 14:
-    if AA + AB + AC > 180:
-        print("Invalid angles: Error sum 180")
 
 # Pythagoras
 
@@ -110,6 +114,11 @@ if 20 < sides() < 24:
     elif AC == 90:
         AA = math.degrees(math.acos(sb / sc))
         AB = 90 - AA
+
+# Main SOHCAHTOA
+
+if (10 < sides() < 14 and 20 < angles() < 24) or (20 < sides() < 24 and 10 < angles() < 14): 
+    
 
 print("Side A is " + str(sa) + ", Side B is " + str(sb) + ", Side C is " + str(sc) + ".")
 print("Angle A is " + str(AA) + ", Angle B is " + str(AB) + ", Angle C is " + str(AC) + ".")
