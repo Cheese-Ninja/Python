@@ -79,6 +79,28 @@ def angles():
     else:
         return -1
 
+# Help
+
+# 3 = All
+# 21 = Missing AC
+# 22 = Missing AB
+# 23 = Missing AA
+# 11 = Only has AA
+# 12 = Only has AB
+# 13 = Only has AC
+# 0 = None
+# -1 = Error
+
+# Triangle Rules
+
+if 20 < angles() < 24:
+    if angles == 21:
+        AC = 180 - AA - AB
+    elif angles == 21:
+        AB = 180 - AA - AC
+    elif angles == 21:
+        AA = 180 - AC - AB
+
 # Pythagoras
 
 if 20 < sides() < 24:
